@@ -1,0 +1,32 @@
+#include <SoftwareSerial.h>
+SoftwareSerial bluetooth(4,5);//PUT RX PIN AND TX PIN
+//REALAY PIN IN HERE
+int relay1 = relay1;
+int relay2 = relay2;
+int relay3 = relay3;
+int relay4 = relay4;
+void setup() {
+bluetooth.begin(9600);
+}
+
+void loop() {
+if(bluetooth.available()>0){
+  char x = bluetooth.read();
+  if(x=='a'){
+    digitalWrite(relay1,HIGH);//TURN ON ONE DEVICE
+    digitalWrite(relay2,HIGH);
+     }
+  if(x=='b'){
+    digitalWrite(relay3,HIGH);//TURN ON TWO DEVICE
+    digitalWrite(relay4,HIGH);
+   }
+  if(x=='s'){
+    digitalWrite(relay1,LOW);//TURN OFF ONE DEVICE
+    digitalWrite(relay2,LOW);
+     }
+  if(x=='z'){
+    digitalWrite(relay3,LOW);//TURN OFF TWO DEVICE
+    digitalWrite(relay4,LOW);
+   }
+  }
+}
