@@ -7,6 +7,11 @@ int relay3 = relay3;
 int relay4 = relay4;
 void setup() {
 bluetooth.begin(9600);
+pinMode(relay1,OUTPUT);
+pinMode(relay2,OUTPUT);
+pinMode(relay3,OUTPUT);
+pinMode(relay4,OUTPUT);
+
 }
 
 void loop() {
